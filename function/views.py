@@ -1,3 +1,8 @@
 from django.shortcuts import render
+from django.views.generic import TemplateView
 
-# Create your views here.
+class ContactView(TemplateView):
+
+    template_name = 'function/contact.html'
+
+contact = ContactView.as_view()
