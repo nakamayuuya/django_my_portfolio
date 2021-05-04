@@ -22,6 +22,10 @@ from portfolio import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    # accountのurls.pyを読み込み
+    path('account/', include('account.urls')),
+    # functionのurls.pyを読み込み
+    path('', include('function.urls')),
     # portfolioのurls.pyを読み込み
-    path('', include('portfolio.urls')),
+    path('', include('portfolio.urls'))
 ] + static(settings.STATIC_URL, document_root=settings.STATICFILES_DIRS) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
